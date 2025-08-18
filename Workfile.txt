@@ -1,2 +1,3 @@
 1. Fix DFS
 2. Write how to run cpp and python code 
+    cpp - g++ filename.cpp -o filename then ./filename

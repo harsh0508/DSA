@@ -1,0 +1,2 @@
+1. Fix DFS
+2. Write how to run

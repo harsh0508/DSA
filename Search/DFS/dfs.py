@@ -21,8 +21,8 @@ def main():
         'F': []
     }
 
-    bfs = Search(graph=graph,startNode='A',goal='D')
-    print(bfs.getBfs())
+    dfs = Search(graph=graph,startNode='A',goal='D')
+    print(dfs.getDfs())
 
     # uncomment to run without goal
     # print("path is without goal :")

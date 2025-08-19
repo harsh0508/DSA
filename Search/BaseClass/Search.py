@@ -1,12 +1,17 @@
 from collections import deque
 
-class Search:
-    def __init__(self,graph,startNode,goal="0"):
+
+class SearchBase:
+    def __init__(self, graph, startNode, goal="0"):
         self.graph = graph
         self.startNode = startNode
         self.goal = goal
         self.path = []
 
+    def reset_path(self):
+        self.path = []
+
+class Search(SearchBase):
     def getBfs(self):
         visited = set()
         queue = deque([self.startNode])
@@ -49,4 +54,13 @@ class Search:
 
         return self.path
 
+
+class InformedSearchClass(SearchBase):
+    def __init__(self,graph,startNode,goal=0,hurestic = None):
+        super().__init__(graph,startNode,goal)
+        self.hurestic = hurestic if hurestic else {}
+
+    def aStar():
         
+        return 0
+            

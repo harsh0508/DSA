@@ -4,13 +4,21 @@
 using namespace std;
 
 int majorityElement(vector<int>& nums) {
-    short count = 1;
-    short majority = nums[0];
+    int count = 0;
+    int majority = nums[0];
 
-    for(short x = 1 ; x < nums.size() ; x++){
-        if(nums[x] == majority){
-            // somethign using n/2
+    if(nums.size() == 1) return majority;
+
+    for(int x = 0 ; x < nums.size() ; x++){
+
+        if(count == 0){
+            majority = nums[x];
         }
+        if(nums[x] == majority) count ++;
+        else count --;
+
+       cout <<"majority is ::" << majority << endl;
+       cout <<"currnet count is ::" << count << endl;
     }
 
     return majority;
@@ -19,8 +27,8 @@ int majorityElement(vector<int>& nums) {
 
 int main(){
 
-    vector<int>nums = {2,2,1,1,1,2,2};
-    majorityElement(nums);
-
+    vector<int>nums = {1000000000,1000000000,-1000000000,-1000000000,-1000000000};
+    int major = majorityElement(nums);
+    cout << "majority element is :" << major << endl;
     return 0;
 }
